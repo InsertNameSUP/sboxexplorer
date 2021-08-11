@@ -4,7 +4,7 @@ function createTile(title, description, image, org, id) {
     var newTile = document.createElement("div")
     newTile.classList.add("tile");
     newTile.innerHTML = `
-    <a href="/search/?id=${org}.${id}">
+    <a href="./search/?id=${org}.${id}">
         <img class="tile-thumb" src="${image}">
         <div class="tile-info">
         <div class="tile-title">${title}</div>
