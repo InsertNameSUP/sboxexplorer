@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         `;
         creditElems[i].href = steamUser.profileurl;
         if(steamUser.steamid == "76561198057710762") document.getElementsByClassName("contributions")[i].innerHTML = `Current Version of Sbox Explorer`;
-        if(steamUser.steamid == "76561198161943355") document.getElementsByClassName("contributions")[1].innerHTML = `Depricated Version of <a class="hyper" href="https://explorer.sboxed.com/">Sbox Explorer</a> (Original)`;
+        if(steamUser.steamid == "76561198161943355") document.getElementsByClassName("contributions")[i].innerHTML = `Depricated Version of <a class="hyper" href="https://explorer.sboxed.com/">Sbox Explorer</a> (Original)`;
     }
     })
 });
