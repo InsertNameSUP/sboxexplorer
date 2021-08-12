@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     var contentElem = document.getElementById("search-content");
     fetch(`https://corsproxy.insert-name.repl.co/asset/get?id=${searchReq}`).then(data => data.json())
     .then((data) => {
+        if (data.size == 0) {
+            console.log("Error Loading!");
+            document.getElementById("error-loading").style.display = "block";
+        }
         var assetInfo = data.asset;
         console.log(assetInfo);
         var assetUpdated = Math.round(((new Date() - (new Date(new Date().getTime() - new Date(1627987211).getTime()))) / 1000 / 60 / 60))
