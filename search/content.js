@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         </div>
         <h1 class="package-name">${assetInfo.title}
         <div class="share-container">
-            <input id="share-selection" readonly value="https://sbox.insert-name.repl.co/?id=${assetInfo.org.ident}.${assetInfo.ident}"></input>
             <button id="share-button" onclick="navigator.clipboard.writeText('https://sbox.insert-name.repl.co/?id=${assetInfo.org.ident}.${assetInfo.ident}'); alert('Share Link Copied to Clipboard!');"> </button>
         </div>
         </h1>
