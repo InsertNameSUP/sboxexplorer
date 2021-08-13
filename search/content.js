@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         var assetInfo = data.asset;
         console.log(assetInfo);
-        var assetUpdated = Math.round(((new Date() - (new Date(new Date().getTime() - new Date(1627987211).getTime()))) / 1000 / 60 / 60))
+        var assetUpdated = Math.round(((new Date() - (new Date(new Date().getTime() - new Date(assetInfo.updated).getTime()))) / 1000 / 60 / 60))
         if(assetUpdated => 24) { // Decide between Updated Days or Updated Hours Ago
             assetUpdated = Math.round(assetUpdated/24) + " Day(s) ago";
         } else {
