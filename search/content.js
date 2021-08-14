@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         var assetInfo = data.asset;
         console.log(assetInfo);
+        if(assetInfo.thumb == "") assetInfo.thumb = "../images/tile-placeholder.jpg"; // replace unkown thumbnail source with placeholder.
+        if(assetInfo.description == "") assetInfo.description = "No Description"; // Replace unknown description with placeholder "No Description"
         var assetUpdated = Math.round(Date.now()/1000 - assetInfo.updated)/60/60 // Hours since update 
         if(assetUpdated => 24) { // Decide between Updated Days or Updated Hours Ago
             assetUpdated = Math.round(assetUpdated/24) + " Day(s) ago";
