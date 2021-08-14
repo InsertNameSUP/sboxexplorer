@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
         var assetInfo = data.asset;
         console.log(assetInfo);
-        var assetUpdated = Math.round(((new Date() - (new Date(new Date().getTime() - new Date(assetInfo.updated).getTime()))) / 1000 / 60 / 60))
+        var assetUpdated = Math.round(Date.now()/1000 - assetInfo.updated)/60/60 // Hours since update 
         if(assetUpdated => 24) { // Decide between Updated Days or Updated Hours Ago
             assetUpdated = Math.round(assetUpdated/24) + " Day(s) ago";
         } else {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <br>
             <span class="package-desc"><h3 class="package-subtitle">Author Description:</h3>  ${assetInfo.org.description}</span>
             <br>
-            <span class="package-desc"><h3 class="package-subtitle">Last Updated:</h3>  ${assetUpdated}</span>
+            <span class="package-desc"><h3 class="package-subtitle">Page Last Updated:</h3>  ${assetUpdated}</span>
             <br>
             <span class="package-desc"><h3 class="package-subtitle">Src-Code: </h3><a class="hyper" href="${downloadLink}"> ${download}</a></span>
             
