@@ -1,4 +1,15 @@
+function Search() {
+    var searchBar = document.getElementById('search-bar');
+    location.href = "../?search=" + searchBar.value;
+}
 document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementById("search-bar")                   // If you hit enter while search bar in focus
+    .addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.key == "Enter") {
+            document.getElementById("search-button").click();
+        }
+    });
     fetch("https://CORS.insert-name.repl.co/https:/api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=D060F6B1C706DABC0E97B1FACD926023&steamids=76561198161943355,76561198057710762").then(data=>data.json())
     .then((steamUsers) => {
     steamUsers = steamUsers.response.players;

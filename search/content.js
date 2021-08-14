@@ -8,6 +8,13 @@ function Search() {
 document.addEventListener('DOMContentLoaded', (event) => {
     var resultsElem = document.getElementById("search-result");
     var contentElem = document.getElementById("search-content");
+    document.getElementById("search-bar")                   // If you hit enter while search bar in focus
+    .addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.key == "Enter") {
+            document.getElementById("search-button").click();
+        }
+    });
     fetch(`https://corsproxy.insert-name.repl.co/asset/get?id=${searchReq}`).then(data => data.json())
     .then((data) => {
         if (data.size == 0) {
