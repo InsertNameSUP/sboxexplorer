@@ -1,5 +1,10 @@
 var urlParams = new URLSearchParams(location.search); // Get Search Request
 var searchReq = urlParams.get("id");
+
+function Search() {
+    var searchBar = document.getElementById('search-bar');
+    location.href = "../?search=" + searchBar.value;
+}
 document.addEventListener('DOMContentLoaded', (event) => {
     var resultsElem = document.getElementById("search-result");
     var contentElem = document.getElementById("search-content");
@@ -17,11 +22,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         } else {
             assetUpdated = assetUpdated + " Hour(s) ago";
         }
-        if(assetInfo.download.type == "upload") {
-            var download = `Ext-Download (${Math.round(assetInfo.download.size/1000000)}MB)`;
-            if(Math.round(assetInfo.download.size/1000000) <= 0) download = `Ext-Download (<1MB)`;
+        if(assetInfo.download) {
+            if(assetInfo.download.type == "upload") {
+                var download = `Ext-Download (${Math.round(assetInfo.download.size/1000000)}MB)`;
+                if(Math.round(assetInfo.download.size/1000000) <= 0) download = `Ext-Download (<1MB)`;
+            }
+            if(assetInfo.download.type == "github") var download = `Github`;
+            var downloadLink = assetInfo.download.url;
+        } else {
+            download = 'No Download Available';
+            downloadLink = "#";
         }
-        if(assetInfo.download.type == "github") var download = `Github`;
+        
         if (!assetInfo.org.description.length) assetInfo.org.description = "N/A"; // No Description?
         resultsElem.style.backgroundImage = `url(${assetInfo.background})`;
         contentElem.innerHTML = `       
@@ -44,7 +56,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             <br>
             <span class="package-desc"><h3 class="package-subtitle">Last Updated:</h3>  ${assetUpdated}</span>
             <br>
-            <span class="package-desc"><h3 class="package-subtitle">Src-Code: </h3><a class="hyper" href="${assetInfo.download.url}"> ${download}</a></span>
+            <span class="package-desc"><h3 class="package-subtitle">Src-Code: </h3><a class="hyper" href="${downloadLink}"> ${download}</a></span>
             
             </div>
         </div>
