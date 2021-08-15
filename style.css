@@ -57,8 +57,34 @@ vertical-align:middle;
     float: right;
     margin-top: 20px;
     margin-right: 10px;
-    justify-content: end;
+    justify-content: flex-end;
     justify-items: stretch;
+    width: 40vw;
+}
+.gamemode-order {
+    background: rgba(0, 0, 0, 0.4);
+    border: 3px solid #313c55;
+    border-radius: 7px;
+    height: fit-content;
+    font-size: 15px;
+    padding: 5px;
+    align-items: center;
+    margin: 0;
+    display: table;
+    width: 25vw;
+    text-align: center;
+    margin-right:5px;
+}
+.order-radio-label {
+    background: none;
+    padding: 5px;
+    height: inherit;
+    margin: 0;
+    display: table-cell;
+    border-radius: 5px;
+}
+.order-radio {
+    display: none;
 }
 #search-bar {
     border: none;
@@ -67,7 +93,7 @@ vertical-align:middle;
     border-radius: 7px;
     border: #313c55 solid 3px;
     padding: 5px;
-    width: 150px;
+    width: 15vw;
     height: 25px;
     font-family: 'Poppins';
     margin-right: 15px;
@@ -83,7 +109,11 @@ vertical-align:middle;
     background-size: cover;
     border: none;
     position: absolute;
-    margin-left: 125px;
+    margin-left: 240px;
+    margin-top:7px;
+}
+.search-form {
+    display: flex;
 }
 #content {
     display: flex;

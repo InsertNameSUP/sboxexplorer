@@ -16,8 +16,16 @@
         <div class="header">
             <img class="header-logo" src="./images/s& logo.png"><a class="header-title" href="?">S&box Explorer</a>
             <div class="header-toolcontainer">
-                <input id="search-bar">
-                <button id="search-button" onclick="Search();"></button>
+                <div class="gamemode-order">
+                    <label class="order-radio-label"><input id="searchPopular" class="order-radio" type="radio" name="search-type" value="popular">Popular</input></label>
+                    <label class="order-radio-label"><input id="searchTrending" class="order-radio" type="radio" name="search-type" value="trending">Trending</input></label>
+                    <label class="order-radio-label"><input id="searchNewest" class="order-radio" type="radio" name="search-type" value="newest">Newest</input></label>
+                    <label class="order-radio-label"><input id="searchLive" class="order-radio" type="radio" name="search-type" value="live">Live</input></label>
+
+                </div>
+                <form id="search-form" class="search-form">
+                <input id="search-bar" placeholder="Search All Games..">
+                </form>
                 <a class="header-tool" href="./credits/">Credits</a>
             </div>
         </div>
