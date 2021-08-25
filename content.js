@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if(!localStorage.getItem("sortBy")) {
         sortValues[0].checked = true; // If no radio is selected, select popular
         sortValues[0].parentElement.style.background = "#3472e6";
-        localStorage.setItem("sortBy", popular);
+        localStorage.setItem("sortBy", "popular");
     } else {
         for(var i = 0; i < sortValues.length; i++) {
             if(sortValues[i].value == localStorage.getItem("sortBy")) {
